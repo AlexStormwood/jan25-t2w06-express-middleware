@@ -2,6 +2,7 @@
 // any routes, middleware, settings, etc, belongs in here!
 
 const express = require("express");
+const { exampleMiddleware, otherExampleMiddleware } = require("./middleware/ExampleMiddlewareFunctions");
 const app = express();
 
 // http://localhost:3000/
@@ -62,6 +63,8 @@ app.get(
 		console.log("middleware activated!");
 		next();
 	},
+	exampleMiddleware,
+	otherExampleMiddleware,
 
 	// This is the final callback in the chain, 
 	// because it does NOT have the ability to call next().
@@ -71,6 +74,24 @@ app.get(
 		})
 	}
 );
+
+
+/*
+
+app.verb(
+	"/login",
+	checkUsername,
+	checkPassword,
+	generateJwt,
+	emailUser,
+	async (request, response) => {
+		response.json({
+			jwt: request.customDataResult.jwt
+		})	
+	})
+);
+
+*/
 
 
 module.exports = {
