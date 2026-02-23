@@ -99,6 +99,25 @@ app.verb(
 */
 
 
+
+// POST http://localhost:3000/users/register
+// body data = {email, password}
+app.post("/users/register",
+	// validate incoming email address
+	// validate incoming password
+	// create user in DB
+	// create JWTs
+
+	(request, response) => {
+		response.json({
+			message: "Successful user registration happend here! Believe us!",
+			data: request.user
+		});
+	}
+);
+
+
+
 module.exports = {
 	app
 }
