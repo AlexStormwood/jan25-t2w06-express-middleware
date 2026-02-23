@@ -1,0 +1,26 @@
+{
+  "name": "jan25-t2w06-express-middleware",
+  "version": "1.0.0",
+  "description": "ExpressJS app that specifically shows middleware in a few different use cases.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
+    "dev": "node --watch ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexStormwood/jan25-t2w06-express-middleware.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AlexStormwood/jan25-t2w06-express-middleware/issues"
+  },
+  "homepage": "https://github.com/AlexStormwood/jan25-t2w06-express-middleware#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
