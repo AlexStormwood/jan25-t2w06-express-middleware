@@ -2,7 +2,7 @@
 // any routes, middleware, settings, etc, belongs in here!
 
 const express = require("express");
-const { exampleMiddleware, otherExampleMiddleware } = require("./middleware/ExampleMiddlewareFunctions");
+const { exampleMiddleware, otherExampleMiddleware, middlewareThatEndsEarly, doCrazierMath, doCrazyMath } = require("./middleware/ExampleMiddlewareFunctions");
 const app = express();
 
 // http://localhost:3000/
@@ -65,12 +65,17 @@ app.get(
 	},
 	exampleMiddleware,
 	otherExampleMiddleware,
-
+	// middlewareThatEndsEarly,
+	doCrazyMath,
+	doCrazierMath,
+	
 	// This is the final callback in the chain, 
 	// because it does NOT have the ability to call next().
 	(request, response) => {
 		response.json({
-			message:"Middleware route has completed!"
+			message:"Middleware route has completed!",
+			crazyMathResult: request.customData.crazyMathResult,
+			crazierMathResult: request.customData.crazierMathResult
 		})
 	}
 );
